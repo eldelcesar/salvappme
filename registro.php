@@ -23,10 +23,10 @@
 
 			if(!isset($_POST["firstname"])){
 				$id = $_GET["albergue"];
-				$result = $con->query("SELECT * FROM  ALBERGUE WHERE A_ID = ".$id);
+				$result = $con->query("SELECT * FROM  ALBERGUE WHERE A_ID = $id");
 				$albergue = $result->fetch_array();
-				$address = $disaster["A_ADDRESS"];
-				$name = $disaster["A_NAME"];
+				$address = $albergue["A_ADDRESS"];
+				$name = $albergue["A_NAME"];
 
 				echo '
 					Estas en el albergue '.$name.' <br>
