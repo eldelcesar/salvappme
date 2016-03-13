@@ -21,7 +21,7 @@
 	<body style="margin: 0; overflow-x: hidden">
 		<?php 
 
-			if(isset($_POST["firstname"])){
+			if(!isset($_POST["firstname"])){
 				$id = $_GET["albergue"];
 				//$id = 1;
 				$result = $con->query("SELECT * FROM  ALBERGUE WHERE A_ID = $id");
@@ -32,6 +32,16 @@
 				echo '
 					Estas en el albergue '.$name.' <br>
 					Con dirección '.$address.' <br><br>
+
+					<form name="newUser" method="post" action="registro.php">
+					  First name:<br>
+					  <input type="text" name="firstname"><br>
+					  Last name:<br>
+					  <input type="text" name="lastname"><br>
+					  Edad:<br>
+					  <input type="number" name="age"><br>
+					  <input type="submit" name="submit" value="Registrar">
+					</form>
 				';
 			}
 
@@ -42,15 +52,7 @@
 
 		?>
 
-		<form name="newUser" method="post" action="registro.php">
-		  First name:<br>
-		  <input type="text" name="firstname"><br>
-		  Last name:<br>
-		  <input type="text" name="lastname"><br>
-		  Edad:<br>
-		  <input type="number" name="age"><br>
-		  <input type="submit" name="submit" value="Registrar">
-		</form>
+
 
 	</body>
 </html>
