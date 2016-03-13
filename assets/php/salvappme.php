@@ -22,7 +22,7 @@ class SalvAppMe{
 	//static public $db_password	= "";
 
 	//static public $domain = "http://localhost/salvappme/";
-	static public $domain = "http://salvapme.tk/";
+	static public $domain = "http://salvapme.tk/salvappme/";
 
 }
 ?>
