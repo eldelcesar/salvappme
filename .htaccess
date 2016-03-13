@@ -1,6 +1,6 @@
 	
   RewriteEngine on 
-	RewriteRule ^/?$ salvappme/index.php
+	RewriteRule ^/([^/]+)/?$ index.php?disaster=$1
   RewriteRule ^programa/?$ program.php
   RewriteRule ^programa/actividad/?$ activity.php
   RewriteRule ^programa/actividad/([^/]+)/?$ activity.php?activity=$1
