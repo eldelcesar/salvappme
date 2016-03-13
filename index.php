@@ -27,15 +27,26 @@
 			$image = $phenomenon["IMAGE"];
 			$reccom = $phenomenon["RECCOMENDATIONS"];
 
-
 			echo '
 				<div style="width: 90%; heigth: 100%; padding: 5%;">
 					<h1 style="text-align: center" >Alerta: '.$alert.' '.$type.'</h1>
 					<img style="width: 80%; margin-left: 10%" src="'.SalvAppMe::$domain.'assets/img/'.$image.'">
 					<p>'.$desription.'</p>
+					<h3>Lugares afectados</h3>
+					<ul>';
+					$result3 = $con->query("SELECT * FROM AFFECTS NATURAL JOIN PLACE WHERE D_ID = $id");
+					while ($places = $result3->fetch_array()) {
+						$lugar = $places["MUNICIPIO"];
+						$l_id = $places["L_ID"];
+						echo '
+							<li><a href="'.SalvAppMe::$domain.'places.php?place='.$l_id.'">'.$lugar.'</a></li>
+						';
+					}
+
+					echo '
+					</ul>
 					<h3>Recomendaciones:</h3>
 					<p>'.$reccom.'</p>
-					<h5><a href="'.SalvAppMe::$domain.'hospitales/">Hospitales</a> | <a href="'.SalvAppMe::$domain.'albergues/">Albergues</a></h5>
 				</div>
 
 			';
