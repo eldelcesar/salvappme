@@ -11,6 +11,8 @@
 		<title>SalvAppMe</title>
 		<link rel="stylesheet" type="text/css" href="<?php echo SalvAppMe::$domain; ?>assets/css/main.css">
 	</head>
+
+
 	<body style="margin: 0; overflow-x: hidden">
 		<?php 
 			$id = $_GET["albergue"];
@@ -21,14 +23,8 @@
 			$alert = $disaster["A_NAME"];
 
 			echo '
-				<div style="width: 90%; heigth: 100%; padding: 5%;">
-					<h1 style="text-align: center" >Alerta: '.$alert.' '.$type.'</h1>
-					<img style="width: 80%; margin-left: 10%" src="'.SalvAppMe::$domain.'assets/img/'.$image.'">
-					<p>'.$desription.'</p>
-					<h3>Recomendaciones:</h3>
-					<p>'.$reccom.'</p>
-					<h5><a href="'.SalvAppMe::$domain.'hospitales/">Hospitales</a> | <a href="'.SalvAppMe::$domain.'albergues/">Albergues</a></h5>
-				</div>
+				Estas en el albergue $albergue <br>
+				Con dirección $address <br>
 			';
 		?>
 
@@ -39,6 +35,7 @@
 		  <input type="text" name="lastname"><br>
 		  Edad:<br>
 		  <input type="number" name="age"><br>
+		  <input type="submit" value="Registrar">
 		</form>
 
 	</body>
