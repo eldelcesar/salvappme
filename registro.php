@@ -29,6 +29,8 @@
 				$name = $albergue["A_NAME"];
 
 				echo '
+
+				<div style= "text_align = center">
 					Estas en el albergue '.$name.' <br>
 					Con dirección '.$address.' <br><br>
 
@@ -41,6 +43,7 @@
 					  <input type="number" name="age"><br>
 					  <input type="submit" name="submit" value="Registrar">
 					</form>
+				</div>
 				';
 			}
 
