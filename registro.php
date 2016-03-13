@@ -1,9 +1,5 @@
 <?php
 
-	if (isset($_POST["firstname"])) {
-    	echo "Yes, mail is set";    
-	}
-
 	include_once('assets/php/salvappme.php');
 	$con = new mysqli(SalvAppMe::$db_hostname,SalvAppMe::$db_user,SalvAppMe::$db_password,SalvAppMe::$db_name);
 	$con->query("SET NAMES 'utf8'");
@@ -24,17 +20,26 @@
 
 	<body style="margin: 0; overflow-x: hidden">
 		<?php 
-			$id = $_GET["albergue"];
-			//$id = 1;
-			$result = $con->query("SELECT * FROM  ALBERGUE WHERE A_ID = $id");
-			$albergue = $result->fetch_array();
-			$address = $disaster["A_ADDRESS"];
-			$alert = $disaster["A_NAME"];
 
-			echo '
-				Estas en el albergue '.$albergue.' <br>
-				Con dirección '.$address.' <br>
-			';
+			if(isset($_POST["firstname"])){
+				$id = $_GET["albergue"];
+				//$id = 1;
+				$result = $con->query("SELECT * FROM  ALBERGUE WHERE A_ID = $id");
+				$albergue = $result->fetch_array();
+				$address = $disaster["A_ADDRESS"];
+				$name = $disaster["A_NAME"];
+
+				echo '
+					Estas en el albergue '.$name.' <br>
+					Con dirección '.$address.' <br><br>
+				';
+			}
+
+			else{
+
+				echo "Estas a salvo. Mantente alerta de los avisos de las autoridades";
+			}
+
 		?>
 
 		<form name="newUser" method="post" action="registro.php">
