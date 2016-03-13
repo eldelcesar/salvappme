@@ -1,7 +1,16 @@
 <?php
+
+	if (isset($_POST["firstname"])) {
+    	echo "Yes, mail is set";    
+	}
+
 	include_once('assets/php/salvappme.php');
 	$con = new mysqli(SalvAppMe::$db_hostname,SalvAppMe::$db_user,SalvAppMe::$db_password,SalvAppMe::$db_name);
 	$con->query("SET NAMES 'utf8'");
+
+	function printAlbergueInfo(){
+
+	}
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -28,14 +37,14 @@
 			';
 		?>
 
-		<form>
+		<form name="newUser" method="post" action="registro.php">
 		  First name:<br>
 		  <input type="text" name="firstname"><br>
 		  Last name:<br>
 		  <input type="text" name="lastname"><br>
 		  Edad:<br>
 		  <input type="number" name="age"><br>
-		  <input type="submit" value="Registrar">
+		  <input type="submit" name="submit" value="Registrar">
 		</form>
 
 	</body>
