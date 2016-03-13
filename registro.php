@@ -30,7 +30,7 @@
 
 				echo '
 
-				<div style= "text_align = center">
+				<div style = "text_align : center">
 					Estas en el albergue '.$name.' <br>
 					Con dirección '.$address.' <br><br>
 
