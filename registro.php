@@ -23,8 +23,8 @@
 			$alert = $disaster["A_NAME"];
 
 			echo '
-				Estas en el albergue $albergue <br>
-				Con dirección $address <br>
+				Estas en el albergue '.$albergue.' <br>
+				Con dirección '.$address.' <br>
 			';
 		?>
 
