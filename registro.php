@@ -23,7 +23,7 @@
 
 			if(!isset($_POST["firstname"])){
 				$id = $_GET["albergue"];
-				//$id = 1;
+				echo $id;
 				$result = $con->query("SELECT * FROM  ALBERGUE WHERE A_ID = $id");
 				$albergue = $result->fetch_array();
 				$address = $disaster["A_ADDRESS"];
